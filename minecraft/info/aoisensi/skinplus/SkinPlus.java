@@ -1,6 +1,10 @@
 package info.aoisensi.skinplus;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import info.aoisensi.skinplus.client.renderer.entity.RenderPlusPlayer;
+import net.minecraft.client.gui.GuiOptions;
 import net.minecraft.client.model.ModelCow;
 import net.minecraft.client.renderer.entity.RenderCow;
 import net.minecraft.client.renderer.entity.RenderPlayer;
@@ -17,8 +21,14 @@ import cpw.mods.fml.common.network.NetworkMod;
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 
 public class SkinPlus {
+	
+	@Instance("SkinPlus")
+    public static SkinPlus instance;
+	
 	@Init
 	public void load(FMLInitializationEvent event) {
 		RenderingRegistry.registerEntityRenderingHandler(EntityPlayer.class, new RenderPlusPlayer());
 	}
+	
+	public Map<String, RenderPlus> RenderPlusMap = new HashMap<String, RenderPlus>();
 }
