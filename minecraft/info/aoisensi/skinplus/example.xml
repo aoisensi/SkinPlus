@@ -1,28 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SkinPlus version="0.1">
-    <ModelAdd>
-        <Parent parent="Head">
-            <AddBox texX="0" texY="0" posX1="0.0" posY1="0.0" posZ1="0.0" posX2="0" posY2="0" posZ2="0" rollX="0.0"rollY="0.0"rollZ="0.0"></AddBox>
-            <AddBox texX="0" texY="0" posX1="0.0" posY1="0.0" posZ1="0.0" posX2="0" posY2="0" posZ2="0" rollX="0.0"rollY="0.0"rollZ="0.0"></AddBox>
-            <AddBox texX="0" texY="0" posX1="0.0" posY1="0.0" posZ1="0.0" posX2="0" posY2="0" posZ2="0" rollX="0.0"rollY="0.0"rollZ="0.0"></AddBox>
-            <!-- AddBoxは複数置ける -->
+<skinplus version="0.1">
+    <model>
+        
+        <head>
+            <box texx="0" texy="0" posx1="0.0" posy1="0.0" posz1="0.0" posx2="0" posy2="0" posz2="0" rollx="0.0"rolly="0.0"rollz="0.0" />
+            <box texx="0" texy="0" posx1="0.0" posy1="0.0" posz1="0.0" posx2="0" posy2="0" posz2="0" rollx="0.0"rolly="0.0"rollz="0.0" />
+            <box texx="0" texy="0" posx1="0.0" posy1="0.0" posz1="0.0" posx2="0" posy2="0" posz2="0" rollx="0.0"rolly="0.0"rollz="0.0" />
+            <!-- boxは複数置ける -->
             <!-- rollは角度 弧度法か度数法か未定 -->
-        </Parent>
-        <Parent parent="Body">
-            <AddBox texX="0" texY="0" posX1="0.0" posY1="0.0" posZ1="0.0" posX2="0" posY2="0" posZ2="0" rollX="0.0"rollY="0.0"rollZ="0.0"></AddBox>
-        </Parent>
-        <Parent parent="RArm">
-            <AddBox texX="0" texY="0" posX1="0.0" posY1="0.0" posZ1="0.0" posX2="0" posY2="0" posZ2="0" rollX="0.0"rollY="0.0"rollZ="0.0"></AddBox>
-        </Parent>
-        <Parent parent="LArm">
-            <AddBox texX="0" texY="0" posX1="0.0" posY1="0.0" posZ1="0.0" posX2="0" posY2="0" posZ2="0" rollX="0.0"rollY="0.0"rollZ="0.0"></AddBox>
-        </Parent>
-        <Parent parent="RLeg">
-            <AddBox texX="0" texY="0" posX1="0.0" posY1="0.0" posZ1="0.0" posX2="0" posY2="0" posZ2="0" rollX="0.0"rollY="0.0"rollZ="0.0"></AddBox>
-        </Parent>
-        <Parent parent="LLeg">
-            <AddBox texX="0" texY="0" posX1="0.0" posY1="0.0" posZ1="0.0" posX2="0" posY2="0" posZ2="0" rollX="0.0"rollY="0.0"rollZ="0.0"></AddBox>
-        </Parent>
+        </head>
+        
+        <body>
+            <box texx="0" texy="0" posx1="0.0" posy1="0.0" posz1="0.0" posx2="0" posy2="0" posz2="0" rollx="0.0"rolly="0.0"rollz="0.0" />
+        </body>
+        
+        <rightarm>
+            <box texx="0" texy="0" posx1="0.0" posy1="0.0" posz1="0.0" posx2="0" posy2="0" posz2="0" rollx="0.0"rolly="0.0"rollz="0.0" />
+        </rightarm>
+        
+        <leftarm>
+            <box texx="0" texy="0" posx1="0.0" posy1="0.0" posz1="0.0" posx2="0" posy2="0" posz2="0" rollx="0.0"rolly="0.0"rollz="0.0" />
+        </larm>
+        
+        <rleg>
+            <box texx="0" texy="0" posx1="0.0" posy1="0.0" posz1="0.0" posx2="0" posy2="0" posz2="0" rollx="0.0"rolly="0.0"rollz="0.0" />
+        </rleg>
+        
+        <lleg>
+            <box texx="0" texy="0" posx1="0.0" posy1="0.0" posz1="0.0" posx2="0" posy2="0" posz2="0" rollx="0.0"rolly="0.0"rollz="0.0" />
+        </lleg>
+        
         <!-- Parentoは全てなくてもおｋ -->
-    </ModelAdd>
-</SkinPlus>
+    </model>
+</skinplus>
