@@ -36,16 +36,7 @@ public class SkinPlus {
 	
 	@PreInit
 	public void preLoad(FMLInitializationEvent event) {
-		try {
-			fieldMainModel = RenderLiving.class.getDeclaredField("mainModel");
-			fieldMainModel.setAccessible(true);
-			fieldModelBipedMain = RenderPlayer.class.getDeclaredField("mainModel");
-			fieldModelBipedMain.setAccessible(true);
-		} catch (NoSuchFieldException e) {
-			e.printStackTrace();
-		} catch (SecurityException e) {
-			e.printStackTrace();
-		}
+
 	}
 	
 	@Init

@@ -43,6 +43,7 @@ public class RenderPlusPlayer extends RenderPlayer
 	
 	private ModelBiped modelBipedMainSub;
 	
+	private  static Field fieldMainModel, fieldModelBipedMain;
 	
 	public RenderPlusPlayer()
 	{
@@ -50,8 +51,9 @@ public class RenderPlusPlayer extends RenderPlayer
 		this.modelBipedMainSub = (ModelBiped)this.mainModel;
 	}
 	
-	public void changeModelBiped(String username)
+	public void changeModelBiped(EntityPlayer par1EntityPlayer)
 	{
+		String username = par1EntityPlayer.username;
 		if(SkinPlus.instance.RenderPlusMap.containsKey(username))
 		{
 			ModelPlusBiped modelPlusBiped = SkinPlus.instance.RenderPlusMap.get(username);
@@ -69,17 +71,42 @@ public class RenderPlusPlayer extends RenderPlayer
 	public void changeModelBiped(ModelBiped modelBiped)
 	{
 		try {
-			SkinPlus.fieldMainModel.set(this, modelBiped);
-			SkinPlus.fieldModelBipedMain.set(this, modelBiped);
+			if(fieldMainModel == null) {
+				fieldMainModel = RenderLiving.class.getDeclaredField("mainModel");
+				fieldMainModel.setAccessible(true);
+			}
+			if(fieldModelBipedMain == null) {
+				fieldModelBipedMain = RenderPlayer.class.getDeclaredField("modelBipedMain");
+				fieldModelBipedMain.setAccessible(true);
+			}
+		} catch (NoSuchFieldException e) {
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			fieldMainModel.set(this, modelBiped);
+			fieldModelBipedMain.set(this, modelBiped);
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		}
 	}
+
 	
+	public void renderPlayer(EntityPlayer par1EntityPlayer, double par2, double par4, double par6, float par8, float par9)
+	{
+		changeModelBiped(par1EntityPlayer);
+		super.renderPlayer(par1EntityPlayer, par2, par4, par6, par8, par9);
+	}
 	
-	
+	public void renderFirstPersonArm(EntityPlayer par1EntityPlayer)
+	{
+		changeModelBiped(par1EntityPlayer);
+		super.renderFirstPersonArm(par1EntityPlayer);
+	}
 	
 	
 	
