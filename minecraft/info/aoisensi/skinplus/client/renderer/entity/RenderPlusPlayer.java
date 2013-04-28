@@ -61,7 +61,7 @@ public class RenderPlusPlayer extends RenderPlayer
 				changeModelBiped(modelBipedMainSub);
 			}
 		} else {
-			//download
+			SkinPlus.instance.RenderPlusMap.put(username, new ModelPlusBiped(0.0F));
 			changeModelBiped(modelBipedMainSub);
 		}
 	}
