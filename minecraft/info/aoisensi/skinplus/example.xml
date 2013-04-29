@@ -3,33 +3,24 @@
     <model>
         
         <head>
-            <box texx="0" texy="0" posx1="0.0" posy1="0.0" posz1="0.0" posx2="0" posy2="0" posz2="0" rollx="0.0"rolly="0.0"rollz="0.0" />
-            <box texx="0" texy="0" posx1="0.0" posy1="0.0" posz1="0.0" posx2="0" posy2="0" posz2="0" rollx="0.0"rolly="0.0"rollz="0.0" />
-            <box texx="0" texy="0" posx1="0.0" posy1="0.0" posz1="0.0" posx2="0" posy2="0" posz2="0" rollx="0.0"rolly="0.0"rollz="0.0" />
-            <!-- boxは複数置ける -->
-            <!-- rollは角度 弧度法か度数法か未定 -->
+            <box texx="0" texy="0" posx1="-5.0" posy1="-5.0" posz1="-5.0" posx2="10" posy2="10" posz2="10" rollpx="0.0"rollpy="0.0"rollpz="0.0" rollx="0.0"rolly="0.0"rollz="0.0" />
+            <!-- rollx rolly rollzは度数法で -->
         </head>
         
         <body>
-            <box texx="0" texy="0" posx1="0.0" posy1="0.0" posz1="0.0" posx2="0" posy2="0" posz2="0" rollx="0.0"rolly="0.0"rollz="0.0" />
         </body>
         
         <rightarm>
-            <box texx="0" texy="0" posx1="0.0" posy1="0.0" posz1="0.0" posx2="0" posy2="0" posz2="0" rollx="0.0"rolly="0.0"rollz="0.0" />
         </rightarm>
         
         <leftarm>
-            <box texx="0" texy="0" posx1="0.0" posy1="0.0" posz1="0.0" posx2="0" posy2="0" posz2="0" rollx="0.0"rolly="0.0"rollz="0.0" />
-        </larm>
+        </leftarm>
         
-        <rleg>
-            <box texx="0" texy="0" posx1="0.0" posy1="0.0" posz1="0.0" posx2="0" posy2="0" posz2="0" rollx="0.0"rolly="0.0"rollz="0.0" />
-        </rleg>
+        <rightleg>
+        </rightleg>
         
-        <lleg>
-            <box texx="0" texy="0" posx1="0.0" posy1="0.0" posz1="0.0" posx2="0" posy2="0" posz2="0" rollx="0.0"rolly="0.0"rollz="0.0" />
-        </lleg>
+        <leftleg>
+        </leftleg>
         
-        <!-- Parentoは全てなくてもおｋ -->
     </model>
 </skinplus>

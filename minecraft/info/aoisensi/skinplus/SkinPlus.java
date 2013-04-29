@@ -4,6 +4,13 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.xml.sax.*;
+
 import info.aoisensi.skinplus.client.model.ModelPlusBiped;
 import info.aoisensi.skinplus.client.renderer.entity.RenderPlusPlayer;
 import net.minecraft.client.gui.GuiOptions;
@@ -21,7 +28,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
-@Mod(modid="SkinPlus", name="SkinPlus", version="0.0.0")
+@Mod(modid="SkinPlus", name="SkinPlus", version="0.1.0")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 
 public class SkinPlus {
@@ -32,12 +39,6 @@ public class SkinPlus {
 	public static Field fieldMainModel, fieldModelBipedMain;
 	
 	public Map<String, ModelPlusBiped> RenderPlusMap = new HashMap<String, ModelPlusBiped>();
-	
-	
-	@PreInit
-	public void preLoad(FMLInitializationEvent event) {
-
-	}
 	
 	@Init
 	public void load(FMLInitializationEvent event) {

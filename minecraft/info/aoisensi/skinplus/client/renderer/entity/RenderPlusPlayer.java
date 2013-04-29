@@ -7,6 +7,7 @@ import java.lang.reflect.Field;
 import java.nio.channels.Channels;
 
 import info.aoisensi.skinplus.SkinPlus;
+import info.aoisensi.skinplus.SkinPlusDownloader;
 import info.aoisensi.skinplus.client.model.ModelPlusBiped;
 
 import org.lwjgl.opengl.GL11;
@@ -58,12 +59,19 @@ public class RenderPlusPlayer extends RenderPlayer
 		{
 			ModelPlusBiped modelPlusBiped = SkinPlus.instance.RenderPlusMap.get(username);
 			if(modelPlusBiped != null) {
+				//DLされたらDLするスレッドから辞書に追記させるべき
 				changeModelBiped((ModelBiped)modelPlusBiped);
 			} else {
+				//nullならDL中orDL失敗
 				changeModelBiped(modelBipedMainSub);
 			}
 		} else {
-			SkinPlus.instance.RenderPlusMap.put(username, new ModelPlusBiped(0.0F));
+			//存在してなかったらとりあえずnullを入れとく
+			SkinPlus.instance.RenderPlusMap.put(username, null);
+			
+			SkinPlusDownloader skinPlusDownloader = new SkinPlusDownloader(username);
+			skinPlusDownloader.start();
+			
 			changeModelBiped(modelBipedMainSub);
 		}
 	}
@@ -107,12 +115,4 @@ public class RenderPlusPlayer extends RenderPlayer
 		changeModelBiped(par1EntityPlayer);
 		super.renderFirstPersonArm(par1EntityPlayer);
 	}
-	
-	
-	
-	
-	
-	
-	
-
 }
