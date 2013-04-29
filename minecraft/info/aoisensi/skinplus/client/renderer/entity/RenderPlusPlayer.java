@@ -59,16 +59,16 @@ public class RenderPlusPlayer extends RenderPlayer
 		{
 			ModelPlusBiped modelPlusBiped = SkinPlus.instance.RenderPlusMap.get(username);
 			if(modelPlusBiped != null) {
-				//DL‚³‚ê‚½‚çDL‚·‚éƒXƒŒƒbƒh‚©‚ç«‘‚É’Ç‹L‚³‚¹‚é‚×‚«
+				//DLã•ã‚ŒãŸã‚‰DLã™ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã‹ã‚‰è¾æ›¸ã«è¿½è¨˜ã™ã‚‹
 				changeModelBiped((ModelBiped)modelPlusBiped);
 			} else {
-				//null‚È‚çDL’†orDL¸”s
+				//nullãªã‚‰DLä¸­orDLå¤±æ•—
 				changeModelBiped(modelBipedMainSub);
 			}
 		} else {
-			//‘¶İ‚µ‚Ä‚È‚©‚Á‚½‚ç‚Æ‚è‚ ‚¦‚¸null‚ğ“ü‚ê‚Æ‚­
+			//å­˜åœ¨ã—ã¦ãªã‹ã£ãŸã‚‰ã¨ã‚Šã‚ãˆãšnullã‚’å…¥ã‚Œã¨ã
 			SkinPlus.instance.RenderPlusMap.put(username, null);
-			
+			//ã‚“ã§ã€DLé–‹å§‹
 			SkinPlusDownloader skinPlusDownloader = new SkinPlusDownloader(username);
 			skinPlusDownloader.start();
 			

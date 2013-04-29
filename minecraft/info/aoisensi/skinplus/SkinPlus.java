@@ -28,7 +28,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
-@Mod(modid="SkinPlus", name="SkinPlus", version="0.1.0")
+@Mod(modid="SkinPlus", name="SkinPlus", version="0.1.0 develop")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 
 public class SkinPlus {
