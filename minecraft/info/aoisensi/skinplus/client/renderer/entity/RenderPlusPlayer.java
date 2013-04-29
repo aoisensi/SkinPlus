@@ -44,8 +44,6 @@ public class RenderPlusPlayer extends RenderPlayer
 	
 	private ModelBiped modelBipedMainSub;
 	
-	private  static Field fieldMainModel, fieldModelBipedMain;
-	
 	public RenderPlusPlayer()
 	{
 		super();
@@ -79,26 +77,20 @@ public class RenderPlusPlayer extends RenderPlayer
 	public void changeModelBiped(ModelBiped modelBiped)
 	{
 		try {
-			if(fieldMainModel == null) {
-				fieldMainModel = RenderLiving.class.getDeclaredField("mainModel");
-				fieldMainModel.setAccessible(true);
-			}
-			if(fieldModelBipedMain == null) {
-				fieldModelBipedMain = RenderPlayer.class.getDeclaredField("modelBipedMain");
-				fieldModelBipedMain.setAccessible(true);
-			}
-		} catch (NoSuchFieldException e) {
-			e.printStackTrace();
-		} catch (SecurityException e) {
-			e.printStackTrace();
-		}
-		
-		try {
+			Field fieldMainModel = RenderLiving.class.getDeclaredField("mainModel");
+			fieldMainModel.setAccessible(true);
 			fieldMainModel.set(this, modelBiped);
+			
+			Field fieldModelBipedMain = RenderPlayer.class.getDeclaredField("modelBipedMain");
+			fieldModelBipedMain.setAccessible(true);
 			fieldModelBipedMain.set(this, modelBiped);
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (NoSuchFieldException e) {
 			e.printStackTrace();
 		}
 	}

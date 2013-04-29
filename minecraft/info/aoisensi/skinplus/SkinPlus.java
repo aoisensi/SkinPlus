@@ -36,8 +36,6 @@ public class SkinPlus {
 	@Instance("SkinPlus")
     public static SkinPlus instance;
 	
-	public static Field fieldMainModel, fieldModelBipedMain;
-	
 	public Map<String, ModelPlusBiped> RenderPlusMap = new HashMap<String, ModelPlusBiped>();
 	
 	@Init
