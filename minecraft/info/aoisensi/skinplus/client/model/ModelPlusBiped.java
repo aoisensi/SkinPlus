@@ -3,17 +3,10 @@ package info.aoisensi.skinplus.client.model;
 
 import java.util.HashMap;
 
-import org.lwjgl.opengl.GL11;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.entity.Entity;
-import net.minecraft.util.MathHelper;
+
+import org.w3c.dom.*;
 
 public class ModelPlusBiped extends ModelBiped {
 
